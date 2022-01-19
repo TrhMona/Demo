@@ -19,7 +19,7 @@ exports.signUp = async (req, res) => {
 
 exports.signIn = async (req, res) => {
   const body = req.body;
-  console.log(body, "---body---")
+  console.log(" body ============",body)
   const user = await User.findOne({ email: body.email });
   if (user) {
     const validPassword = await bcrypt.compare(body.password, user.password);
